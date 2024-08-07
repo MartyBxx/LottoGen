@@ -25,8 +25,8 @@ if lotterie == 'Eurojackpot':
         elif ej_zz_min > ej_zz_max:
             st.error('Zusatzzahlen Min muss schon kleiner als Zusatzzahlen Max sein :woozy_face:')
         else:
-            ej_h_zahlen = set([rd.randint(ej_hz_min, ej_hz_max) for i in range(ej_hzn)])
-            ej_z_zahlen = set([rd.randint(ej_zz_min, ej_zz_max) for i in range(ej_zzn)])
+            ej_h_zahlen = [rd.sample(ej_hz_min, ej_hz_max) for i in range(ej_hzn)]
+            ej_z_zahlen = [rd.sample(ej_zz_min, ej_zz_max) for i in range(ej_zzn)]
             st.info(sorted(ej_h_zahlen))
             st.info(sorted(ej_z_zahlen))
             st.write('Mögen dies deine Glückszahlen sein! :four_leaf_clover:')
